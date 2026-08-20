@@ -61,7 +61,7 @@ h3 {
 
     box-shadow: 0 0 1.5vmin rgba(0, 0, 0, 0.7);
 
-    font-size: clamp(3rem, 15vw, 6rem);
+    font-size: 6rem;
     color: #df140d;
 
     background-color: #ffffc7;
