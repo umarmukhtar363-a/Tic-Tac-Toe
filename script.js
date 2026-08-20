@@ -33,6 +33,7 @@ boxes.forEach( function(box){
         }
         else{
             box.textContent="X";
+            box.style.color= "green";
             turnO=true;
         }
         box.disabled=true;
