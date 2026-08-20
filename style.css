@@ -4,34 +4,171 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
 body {
     background-color: #548687;
     text-align: center;
+    font-family: Arial, sans-serif;
+
     min-height: 100vh;
     min-height: 100dvh;
-    padding: 1.5rem 1rem 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 12px;
+    overflow-x: hidden;
+}
+
+/* =========================
+   MAIN GAME LAYOUT
+========================= */
+
+main {
+    width: 100%;
+    max-width: 500px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    gap: 12px;
 }
 
-/* GAME MESSAGE */
+/* =========================
+   TITLE
+========================= */
 
-.msg-container {
-    width: 100%;
-    margin-bottom: 1rem;
+h1 {
+    color: #191913;
+    font-size: clamp(2rem, 6vw, 3.5rem);
 }
 
-h3 {
-    color: #ffffc7;
-    font-size: clamp(1.8rem, 7vw, 4rem);
-    padding: 0 0.5rem;
-}
-
-/* GAME CONTAINER */
+/* =========================
+   GAME AREA
+========================= */
 
 .container {
     width: 100%;
-    flex: 1;
+
     display: flex;
-    
+    justify-content: center;
+    align-items: center;
+}
+
+/* =========================
+   GAME BOARD
+========================= */
+
+.game {
+    width: min(80vw, 60vh, 420px);
+    aspect-ratio: 1 / 1;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: clamp(6px, 1.5vmin, 12px);
+}
+
+/* =========================
+   GAME BOXES
+========================= */
+
+.box {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    border: none;
+    border-radius: 12px;
+
+    background-color: #ffffc7;
+    color: #df140d;
+
+    font-size: clamp(2.5rem, 11vmin, 6rem);
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.rst-btn,
+.new-btn {
+    width: 125px;
+    height: 38px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #191913;
+    color: white;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    margin: 0 3px;
+
+    flex-shrink: 0;
+}
+
+.rst-btn:hover,
+.new-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* =========================
+   WINNER MESSAGE
+========================= */
+
+.msg-container {
+    position: fixed;
+    inset: 0;
+
+    background-color: #548687;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 10;
+    padding: 20px;
+}
+
+.msg-container h3 {
+    color: #ffffc7;
+    font-size: clamp(2rem, 8vw, 4rem);
+}
+
+.hide {
+    display: none;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 8px;
+    }
+
+    main {
+        gap
