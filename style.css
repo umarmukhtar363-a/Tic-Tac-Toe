@@ -14,25 +14,44 @@ body {
     background-color: #548687;
     text-align: center;
     font-family: Arial, sans-serif;
-
     min-height: 100vh;
     min-height: 100dvh;
+    padding: 10px;
+    overflow-x: hidden;
+}
+
+/* =====================
+   WINNER MESSAGE
+===================== */
+
+.msg-container {
+    width: 100%;
+    min-height: 70px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    padding: 12px;
-    overflow-x: hidden;
+    padding: 10px;
 }
 
-/* =========================
-   MAIN GAME LAYOUT
-========================= */
+.msg-container h3 {
+    color: #ffffc7;
+    font-size: clamp(1.5rem, 6vw, 3.5rem);
+}
+
+.hide {
+    display: none;
+}
+
+/* =====================
+   MAIN
+===================== */
 
 main {
     width: 100%;
     max-width: 500px;
+    margin: auto;
 
     display: flex;
     flex-direction: column;
@@ -41,18 +60,18 @@ main {
     gap: 12px;
 }
 
-/* =========================
+/* =====================
    TITLE
-========================= */
+===================== */
 
 h1 {
     color: #191913;
-    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-size: clamp(2rem, 7vw, 3.5rem);
 }
 
-/* =========================
-   GAME AREA
-========================= */
+/* =====================
+   GAME CONTAINER
+===================== */
 
 .container {
     width: 100%;
@@ -62,12 +81,12 @@ h1 {
     align-items: center;
 }
 
-/* =========================
+/* =====================
    GAME BOARD
-========================= */
+===================== */
 
 .game {
-    width: min(80vw, 60vh, 420px);
+    width: min(82vw, 55vh, 420px);
     aspect-ratio: 1 / 1;
 
     display: grid;
@@ -76,9 +95,9 @@ h1 {
     gap: clamp(6px, 1.5vmin, 12px);
 }
 
-/* =========================
+/* =====================
    GAME BOXES
-========================= */
+===================== */
 
 .box {
     width: 100%;
@@ -88,26 +107,25 @@ h1 {
     border-radius: 12px;
 
     background-color: #ffffc7;
-    color: #df140d;
 
-    font-size: clamp(2.5rem, 11vmin, 6rem);
+    font-size: clamp(2.5rem, 10vmin, 6rem);
     font-weight: bold;
 
     cursor: pointer;
 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-
     display: flex;
     justify-content: center;
     align-items: center;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
 }
 
-/* =========================
+/* =====================
    BUTTONS
-========================= */
+===================== */
 
-.rst-btn,
-.new-btn {
+.new-btn,
+.rst-btn {
     width: 125px;
     height: 38px;
 
@@ -117,52 +135,17 @@ h1 {
     background-color: #191913;
     color: white;
 
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
 
     cursor: pointer;
 
-    margin: 0 3px;
-
-    flex-shrink: 0;
+    margin: 2px;
 }
 
-.rst-btn:hover,
-.new-btn:hover {
-    transform: translateY(-2px);
-}
-
-/* =========================
-   WINNER MESSAGE
-========================= */
-
-.msg-container {
-    position: fixed;
-    inset: 0;
-
-    background-color: #548687;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    z-index: 10;
-    padding: 20px;
-}
-
-.msg-container h3 {
-    color: #ffffc7;
-    font-size: clamp(2rem, 8vw, 4rem);
-}
-
-.hide {
-    display: none;
-}
-
-/* =========================
+/* =====================
    MOBILE
-========================= */
+===================== */
 
 @media (max-width: 600px) {
 
@@ -171,4 +154,54 @@ h1 {
     }
 
     main {
-        gap
+        gap: 8px;
+    }
+
+    .msg-container {
+        min-height: 55px;
+        padding: 6px;
+    }
+
+    h1 {
+        font-size: 2.3rem;
+    }
+
+    .game {
+        width: min(88vw, 52vh);
+        gap: 7px;
+    }
+
+    .box {
+        font-size: 14vw;
+        border-radius: 10px;
+    }
+
+    .new-btn,
+    .rst-btn {
+        width: 115px;
+        max-width: 40vw;
+        height: 36px;
+        font-size: 0.75rem;
+    }
+}
+
+/* =====================
+   SHORT SCREENS
+===================== */
+
+@media (max-height: 650px) {
+
+    main {
+        gap: 5px;
+    }
+
+    .game {
+        width: min(80vw, 45vh);
+    }
+
+    .new-btn,
+    .rst-btn {
+        height: 32px;
+    }
+}
+       
