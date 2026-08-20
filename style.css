@@ -137,3 +137,22 @@ h3 {
 .hide {
     display: none;
 }
+
+.rst-btn {
+    margin-top: 1rem;
+    margin-right: 0.5rem;
+}
+
+.new-btn {
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+}
+
+@media (max-width: 480px) {
+    .rst-btn,
+    .new-btn {
+        width: 90%;
+        display: block;
+        margin: 0.8rem auto;
+    }
+}
