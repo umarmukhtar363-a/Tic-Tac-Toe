@@ -29,6 +29,7 @@ boxes.forEach( function(box){
     box.addEventListener("click", function(){
         if(turnO){
             box.textContent="O";
+            box.style.color= "#df140d"
             turnO=false;
         }
         else{
